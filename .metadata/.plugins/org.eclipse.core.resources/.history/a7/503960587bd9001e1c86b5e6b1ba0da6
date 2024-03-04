@@ -1,0 +1,58 @@
+package rtCampAssignment;
+
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+
+import java.util.List;
+
+import org.testng.annotations.Test;
+
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
+
+public class CreateWishList {
+
+	@Test
+	public void create_wish_list() throws Throwable {
+	
+		Playwright playwright = Playwright.create();
+		Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+		Page page = browser.newPage();
+		page.navigate("https://www.amazon.in/");
+		page.hover("//span[text()=\"Hello, sign in\"]");
+		page.click("//span[text()=\"Sign in\"]");
+		page.locator("//input[@id=\"ap_email\"]").fill("vishalgoswamijims@gmail.com");
+		page.click("//input[@id=\"continue\"]");
+		page.locator("//input[@id=\"ap_password\"]").fill("Test@123");
+		page.click("//input[@id=\"signInSubmit\"]");
+		assertThat(page).hasTitle("Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in");
+		page.hover("//span[text()=\"Account & Lists\"]");
+		
+		page.click("//span[text()=\"Create a Wish List\"]");
+		
+		
+		//popup.click("//input[@aria-labelledby=\"createList-announce\"]");
+		page.locator("//input[@id=\"list-name\"]").fill("My List");
+		page.click("//span[text()=\"Create List\"]//preceding-sibling::input");
+		Thread.sleep(1000);
+		page.getByPlaceholder("Search Amazon.in").fill("iphone14");
+		page.locator("//div[@class=\"left-pane-results-container\"]/child::div[1]").click();
+		Page newpage = page.waitForPopup(	()->page.click("//div[@data-component-type=\"s-search-result\"][1]//child::h2")		);
+		newpage.waitForLoadState();
+		newpage.click("//input[@id=\"add-to-wishlist-button\"]");
+		newpage.click("//li[@class=\"a-dropdown-item\"]//child::a[1]");
+		newpage.click("//a[text()=\"View Your List\"]");
+		List<String> result = newpage.locator("//li[@class=\"a-spacing-none g-item-sortable\"]//child::h2").allTextContents();
+		for(String s: result)
+			System.out.println(s);
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+}

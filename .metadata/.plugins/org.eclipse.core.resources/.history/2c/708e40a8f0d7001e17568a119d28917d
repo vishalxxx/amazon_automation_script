@@ -1,0 +1,26 @@
+package newproject;
+
+
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
+
+public class LaunchBrowser {
+
+	public static void main(String[] args) {
+		
+		Playwright playwright = Playwright.create();
+		Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+		Page page = browser.newPage();
+		
+		page.navigate("https://www.amazon.in/");
+		page.hover("//span[text()=\"Hello, sign in\"]");
+		page.click("//span[text()=\"Sign in\"]");
+		page.locator("//input[@id=\"ap_email\"]").fill("vishalgoswamijims@gmail.com");
+		page.click("//input[@id=\"continue\"]");
+		page.locator("//input[@id=\"ap_password\"]").fill("Test@123");
+		page.click("//input[@id=\"signInSubmit\"]");
+		
+	}
+}

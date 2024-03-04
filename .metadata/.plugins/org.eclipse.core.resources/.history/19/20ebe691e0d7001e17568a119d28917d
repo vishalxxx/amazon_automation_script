@@ -1,0 +1,11 @@
+package newproject;
+
+import com.microsoft.playwright.Playwright;
+
+public class LaunchBrowser {
+
+	public static void main(String[] args) {
+		
+		Playwright launch = Playwright.create();
+	}
+}

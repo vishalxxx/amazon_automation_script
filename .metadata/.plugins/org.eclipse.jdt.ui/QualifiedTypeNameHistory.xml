@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.Playwright"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.Playwright.CreateOptions"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.Browser"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.Page"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.BrowserType.LaunchOptions"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.BrowserType"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.assertions.PlaywrightAssertions"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.Locator"/>
+    <fullyQualifiedTypeName name="org.testng.Assert"/>
+    <fullyQualifiedTypeName name="org.testng.annotations.Test"/>
+</qualifiedTypeNameHistroy>
