@@ -26,6 +26,8 @@ amazon_automation_script/amazon_automation/src/test/java/rtCampAssignment/
 
 6. Sometimes it may happen while running scripts amazon captcha or puzzeles appear at that time we need to restart the script since it is not handeled yet.
 
+## Test Cases Sheet Link:
+https://docs.google.com/spreadsheets/d/1hF65cUN84tW1oA_MvM3929PK5-MY0Zl1xy47yOeq43Q/edit?usp=sharing
 
 Contributing:
 Contributions to this repository are welcome! If you encounter any issues, have suggestions for improvements, or wish to add new test cases, please feel free to open an issue or submit a pull request.
